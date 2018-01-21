@@ -1,14 +1,14 @@
 // colin
 //
 // 1/18/18
-//  
+//
 // 11:17 AM
 
 package lexer
 
 import (
-	"testing"
 	"monkey/token"
+	"testing"
 )
 
 func TestNextToken(t *testing.T) {
@@ -23,7 +23,7 @@ let result = add(five, ten);
 `
 
 	tests := []struct {
-		expectedType token.TokenType
+		expectedType    token.TokenType
 		expectedLiteral string
 	}{
 		{token.LET, "let"},

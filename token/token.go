@@ -1,7 +1,7 @@
 // colin
 //
 // 1/18/18
-//  
+//
 // 11:14 AM
 
 package token
@@ -9,35 +9,35 @@ package token
 type TokenType string
 
 type Token struct {
-	Type TokenType
+	Type    TokenType
 	Literal string
 }
 
 const (
-	ILLEGAL = "ILLEGAL"
-	EOF = "EOF"
-	IDENT = "IDENT"
-	INT = "INT"
-	ASSIGN = "="
-	PLUS = "+"
-	MINUS = "-"
-	BANG = "!"
-	ASTERISK = "*"
-	SLASH = "/"
-	LT = "<"
-	GT = ">"
-	COMMA = ","
+	ILLEGAL   = "ILLEGAL"
+	EOF       = "EOF"
+	IDENT     = "IDENT"
+	INT       = "INT"
+	ASSIGN    = "="
+	PLUS      = "+"
+	MINUS     = "-"
+	BANG      = "!"
+	ASTERISK  = "*"
+	SLASH     = "/"
+	LT        = "<"
+	GT        = ">"
+	COMMA     = ","
 	SEMICOLON = ";"
-	LPAREN = "("
-	RPAREN = ")"
-	LBRACE = "{"
-	RBRACE = "}"
-	FUNCTION = "FUNCTION"
-	LET = "LET"
+	LPAREN    = "("
+	RPAREN    = ")"
+	LBRACE    = "{"
+	RBRACE    = "}"
+	FUNCTION  = "FUNCTION"
+	LET       = "LET"
 )
 
 var keywords = map[string]TokenType{
-	"fn": FUNCTION,
+	"fn":  FUNCTION,
 	"let": LET,
 }
 
