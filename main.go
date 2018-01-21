@@ -11,15 +11,23 @@ import (
 	"monkey/repl"
 	"os"
 	"os/user"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
-	user, err := user.Current()
+	log.SetFormatter(&log.JSONFormatter{})
+
+	usr, err := user.Current()
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Printf("Hello %s! This is the Monkey programming language!\n", user.Username)
+	log.WithFields(log.Fields{
+		"User": usr.Username,
+	}).Info("Starting Monkey REPL")
+
+	fmt.Printf("Hello %s! This is the Monkey programming language!\n", usr.Username)
 	fmt.Printf("Feel free to type in commands\n")
 
 	repl.Start(os.Stdin, os.Stdout)
